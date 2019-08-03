@@ -1,0 +1,1 @@
+# prickol-maniac.github.io
