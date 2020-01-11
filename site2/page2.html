@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<head>
+	<title>Мои увлечения</title>
+	<meta charset="utf-8">
+</head>
+<style type="text/css"></style>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+	body{background: url(https://webattach.mail.yandex.net/message_part_real/?sid=YWVzX3NpZDp7ImFlc0tleUlkIjoiMTc4IiwiaG1hY0tleUlkIjoiMTc4IiwiaXZCYXNlNjQiOiJqT0xsZGdjZWo5bXRqWWlsZzI1dlRnPT0iLCJzaWRCYXNlNjQiOiJlTWw5enlIQzR5VTRmY2JWMTB4cVVUcEFYT2VuR1dMakdJd1NLWnJzRE5nMXI0YmFOMTFsQ2doTThEVzh3UHI3cFZSVzRzNU9xeElqVGFxSUxrTnpUemltNm5GemdSM2tIYUpoc0JUMTZFdDlrUU1JUFRjZ0V4SGhDMFJKZkczbCIsImhtYWNCYXNlNjQiOiJjMmJ6RWJMOU5vVW5QdVdJUG90R0JjSGNFeEFZbUdSbzhRRTlrb1k1dmVZPSJ9&name=%D1%84%D0%BE%D0%BD.png&no_disposition=y);}
+</style>
+<style>
+	img{
+		max-height: 100%;
+		max-width: 100%;
+		border: 7px solid #FFFFFF;
+		margin: 0;
+	}
+	p{
+		font-size: 20px;
+		font: "Comic Sans MS";
+		color: #B0E0E6;
+		margin-bottom: 25px;
+	}
+	h1{
+		margin-bottom: 30px;
+		text-align: center;
+		color: #FFFFFF;
+	}
+	h2{
+		color: #1E90FF;
+		margin-bottom: 50px;
+	}
+	body{
+		font-family: "Comic Sans MS"
+	}
+	*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+html,
+body {
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    border: 0;
+}
+
+
+.thumbs {
+  width: 100%;
+   /* опционально */
+  margin: 10px;
+  opacity: .99;
+  overflow: hidden;
+  position: relative;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.thumbs:before {
+  content: '';
+  background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  width: 100%;
+  height: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+  -webkit-transition-property: top, opacity;
+  transition-property: top, opacity;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.thumbs img {
+  display: block;
+  width: 110%; /* ширина картинки */
+  height: 110%; /* высота картинки */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.thumbs .caption {
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  text-align: center;
+}
+.thumbs .caption span {
+  display: block;
+  opacity: 0;
+  position: relative;
+  top: 100px;
+  -webkit-transition-property: top, opacity;
+  transition-property: top, opacity;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.thumbs .caption .title {
+  line-height: 1;
+  font-weight: normal;
+  font-size: 18px;
+}
+.thumbs .caption .info {
+  line-height: 1.2;
+  margin-top: 5px;
+  font-size: 12px;
+}
+.thumbs:focus:before,
+.thumbs:focus span, .thumbs:hover:before,
+.thumbs:hover span {
+  opacity: 1;
+}
+.thumbs:focus:before, .thumbs:hover:before {
+  top: 50%;
+}
+.thumbs:focus span, .thumbs:hover span {
+  top: 0;
+}
+.thumbs:focus .title, .thumbs:hover .title {
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+.thumbs:focus .info, .thumbs:hover .info {
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+</style>
+<body>
+	<h1>Рисование</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<p>Рисованием я увлекалась ещё в детстве, но серьёзно взялась за него только осенью 2017 года. Сначала я рисовала только на бумаге, но позднее преобрела графический планшет и продолжила обучение на нём. Ни в какие художественые школы я не ходила и уроков у частных лиц не брала - решила всему научиться самостоятельно.</p>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+	    		<h2>Диджитал-арты:</h2>
+	    		<h3 style="color: #B0E0E6;">Арты, посвящённые конкретным личностям</h3>
+	    	</div>
+	    	<div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+	    		<div class="thumbs">
+    				<img src="https://webattach.mail.yandex.net/message_part_real/%D0%BA%D0%B8%D0%B3%D1%83%D1%80%D1%83%D0%BC%D0%B8.png?exif_rotate=y&no_disposition=y&name=%D0%BA%D0%B8%D0%B3%D1%83%D1%80%D1%83%D0%BC%D0%B8.png&sid=YWVzX3NpZDp7ImFlc0tleUlkIjoiMTc4IiwiaG1hY0tleUlkIjoiMTc4IiwiaXZCYXNlNjQiOiIrRkViRHgzMWhhdnMwYk5WcUpPYWFnPT0iLCJzaWRCYXNlNjQiOiJzVVRYblMyRkczM3VnYUJxVWNMTUNiZzJ1S1JLZXM5dHNqSFJBRGx0NzVKRFcvTXpnNWZtUktHZGpGMjFSeGFCQVlENjlCcTJxV0VJWitpZkJRbUlzZHFhM0xtTmcyVnRLaXdzVWord1NhYmR3aEJMV0dZSUc1UkNVUC9mSjJIayIsImhtYWNCYXNlNjQiOiJyWncwYlBVWTlSR3dxNzhNbis4RVBBbUlMZWc4cG5oSHdtaVdXWVpkNmdnPSJ9"/>
+    				<div class="caption">
+        				<span class="title">Блогеры Chio, Leks, Tarelko, Rimus&Lesli</span>
+    				</div>
+				</div>
+	    	</div>
+	    	<div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+	    		<div class="thumbs">
+    				<img src=https://webattach.mail.yandex.net/message_part_real/blackpink.png?exif_rotate=y&no_disposition=y&name=blackpink.png&sid=YWVzX3NpZDp7ImFlc0tleUlkIjoiMTc4IiwiaG1hY0tleUlkIjoiMTc4IiwiaXZCYXNlNjQiOiJhdmJnSHRHNEljaEVmQUZQY0duOHd3PT0iLCJzaWRCYXNlNjQiOiIvYUwzK0d1T3VoYUF4L0R4elNDZ29QWHdpdlFYODNQQlEvVEtwck5jNE8wNnZzZGhpaE5LQW1wWHduK0FpQTI3dVJKekcrdG0vYTRSeFRGbVFxZEtLMmlRSVNuMFBGVmlVbVVxUy9rZVhEeFVLZk12aFcrMGdtNEU4MjBJZVVWMSIsImhtYWNCYXNlNjQiOiJWVHdZS0ppK29ucFVRTTZHRzF6aWdOK1RId0lWTktnMzNnVE5TelN2aFVzPSJ9"/>
+    				<div class="caption">
+        				<span class="title">Группа BlackPink</span>
+    				</div>
+				</div>
+	    	</div>
+	    	<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+	    		<div class="thumbs">
+    				<img src="https://webattach.mail.yandex.net/message_part_real/%D0%BF%D1%80%D0%B5%D0%BA%D0%BE%D0%BB%D0%B5%D1%80.png?exif_rotate=y&no_disposition=y&name=%D0%BF%D1%80%D0%B5%D0%BA%D0%BE%D0%BB%D0%B5%D1%80.png&sid=YWVzX3NpZDp7ImFlc0tleUlkIjoiMTc4IiwiaG1hY0tleUlkIjoiMTc4IiwiaXZCYXNlNjQiOiJCQzBLQ3lGdU90WnM5TkxHM094RzlRPT0iLCJzaWRCYXNlNjQiOiJ0aWo2OHdSczRXYmlodFUrOHh6U0VxOUJhc21vNnN2U05EeDJTNkppd2R4aEJXbDVvTWVDdGpJYTluTnFOKzFZN2FaOUJlVnM2UWNzenV6NWVKdWRWYmZ5UlhtVzRQbzI0ekZOQlF4VDBUZURBTTJxaklmZ2xLSlQwK1phUmZyQSIsImhtYWNCYXNlNjQiOiIrY05tTS9mSGZnMXNHZ3VDY0FKbEtsaGtKNzZXQ0UwaWJwd2tUVlFUYTcwPSJ9"/>
+    				<div class="caption">
+        				<span class="title">Вк-комик Преколер!</span>
+    				</div>
+				</div>
+	    	</div>
+	    	<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+	    		<div class="thumbs">
+    				<img src="https://clck.ru/LmCXf" style="height: 840px;">
+    				<div class="caption">
+        				<span class="title"> Художница AnnaBel</span>
+    				</div>
+				</div>
+	    	</div>
+	    	<div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
+	    		<div class="thumbs">
+    				<p style="height: 400px;"><img src="https://clck.ru/LmCgk"></p>
+    				<div class="caption">
+        				<span class="title"> Блогер Soderling</span>
+    				</div>
+				</div>
+				<div class="thumbs">
+    				<img src="https://clck.ru/LmCoo" style="height: 400px;" >
+    				<div class="caption">
+        				<span class="title"> Блогер Soderling</span>
+    				</div>
+				</div>
+	    	</div>
+	    	<div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+	    		<div class="thumbs">
+    				<img src="https://clck.ru/LmD6w"/>
+    				<div class="caption">
+        				<span class="title"> Художница AnnaBel и я</span>
+    				</div>
+				</div>
+	    	</div>
+	    	<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+	    		<div class="thumbs">
+    				<img src="https://clck.ru/LmDC7" style="height: 490px;" >
+    				<div class="caption">
+        				<span class="title"> Художница Packet</span>
+    				</div>
+				</div>
+	    	</div>
+	    </div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<hr style="color: #FFFFFF; height: 2px; border: none; background-color: #FFFFFF;">
+			</div>
+			<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+				<div class="thumbs">
+    				<img src="https://clck.ru/LmE5u" style="height: 840px;">
+    				<div class="caption">
+        				<span class="title"> Персонаж AnnaBel - Аня</span>
+    				</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+				<h3 style="color: #1E90FF; margin-top: 100px; margin-bottom: 40px;">Принты для дакимакур</h3>
+				<p>Дакимакуры - японские "подушки-обнимашки" с изображением какого-либо персонажа игры, фильма, сериала и т.д. Обычно принты для них рисуют в виде этих самых персонажей, лежащих на кровати, но встречаются и другие варианты изображений.</p>
+			</div>
+			<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+				<div class="thumbs">
+    				<img src="https://clck.ru/LmE8p" style="height: 840px;">
+    				<div class="caption">
+        				<span class="title"> Мой персонаж - Рейнбо</span>
+    				</div>
+				</div>
+			</div>
+			<div class="col-12">
+				<hr style="color: #FFFFFF; height: 2px; border: none; background-color: #FFFFFF;">
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h3 style="color: #1E90FF; margin-top: 10px; margin-bottom: 40px;">Перерисовки старых работ</h3>
+			</div>
+			<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+				<div class="thumbs">
+    				<img src="https://clck.ru/LmEjR">
+    				<div class="caption">
+        				<span class="title"> Ильфаника</span>
+    				</div>
+				</div>
+			</div>
+			<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+				<div class="thumbs">
+    				<img src="https://clck.ru/LmEmZ">
+    				<div class="caption">
+        				<span class="title"> Девушка в кепке</span>
+    				</div>
+				</div>
+			</div>
+			<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+				<div class="thumbs">
+    				<img src="https://clck.ru/LmEnv">
+    				<div class="caption">
+        				<span class="title"> Девушка с бантиком</span>
+    				</div>
+				</div>
+			</div>
+			<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+				<div class="thumbs">
+    				<img src="https://clck.ru/LmEpS">
+    				<div class="caption">
+        				<span class="title"> Широ (No game - no life)</span>
+    				</div>
+				</div>
+			</div>
+			<div class="col-12"><hr style="color: #FFFFFF; height: 2px; border: none; background-color: #FFFFFF;"></div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h3 style="color: #1E90FF; margin-top: 10px; margin-bottom: 40px;">Прочие работы</h3>
+			</div>
+			<div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+				<div class="thumbs">
+    				<img src="https://clck.ru/LmKEb">
+    				<div class="caption">
+        				<span class="title">Девочка-кошка</span>
+    				</div>
+				</div>
+				<div class="thumbs">
+    				<img src="https://clck.ru/LmKtw">
+    				<div class="caption">
+        				<span class="title">Блогер Tarelko</span>
+    				</div>
+				</div>
+				<div class="thumbs">
+    				<img src="https://clck.ru/LmLAA">
+    				<div class="caption">
+        				<span class="title">Арт по фото</span>
+    				</div>
+				</div>
+			</div>
+			<div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5">
+				<div class="thumbs">
+    				<img src="https://clck.ru/LmKWf">
+    				<div class="caption">
+        				<span class="title">Утиные истории</span>
+    				</div>
+				</div>
+				<div class="thumbs">
+    				<img src="https://clck.ru/LmL4Y">
+    				<div class="caption">
+        				<span class="title">Арт по фото</span>
+    				</div>
+				</div>
+				<div class="thumbs">
+    				<img src="https://clck.ru/LmLCi">
+    				<div class="caption">
+        				<span class="title">Эклипса (Стар против сил зла)</span>
+    				</div>
+				</div>
+			</div>
+			<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+				<div class="thumbs">
+    				<img src="https://clck.ru/LmKc5">
+    				<div class="caption">
+        				<span class="title">Крысы Онлайн</span>
+    				</div>
+				</div>
+				<div class="thumbs">
+    				<img src="https://clck.ru/LmKhz" style="height: 830px;" >
+    				<div class="caption">
+        				<span class="title">AnnaBel</span>
+    				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12"><hr style="color: #FFFFFF; height: 2px; border: none; background-color: #FFFFFF;"></div>
+			<div class="col-12">
+				<h2  style="margin-top: 100px;">Традишинал-арты</h2>
+			</div>
+		</div>
+	</div>
+</body>
