@@ -171,181 +171,25 @@ span.sim-dot {
         </div>
     </div>
 </div>
-
-<script type="text/javascript">
-	function Sim(sldrId) {
-
-	let id = document.getElementById(sldrId);
-	if(id) {
-		this.sldrRoot = id
-	}
-	else {
-		this.sldrRoot = document.querySelector('.sim-slider')
-	};
-
-	// Carousel objects
-	this.sldrList = this.sldrRoot.querySelector('.sim-slider-list');
-	this.sldrElements = this.sldrList.querySelectorAll('.sim-slider-element');
-	this.sldrElemFirst = this.sldrList.querySelector('.sim-slider-element');
-	this.leftArrow = this.sldrRoot.querySelector('div.sim-slider-arrow-left');
-	this.rightArrow = this.sldrRoot.querySelector('div.sim-slider-arrow-right');
-	this.indicatorDots = this.sldrRoot.querySelector('div.sim-slider-dots');
-
-	// Initialization
-	this.options = Sim.defaults;
-	Sim.initialize(this)
-};
-
-Sim.defaults = {
-
-	// Default options for the carousel
-	loop: false,     // Бесконечное зацикливание слайдера
-	auto: true,     // Автоматическое пролистывание
-	interval: 10000, // Интервал между пролистыванием элементов (мс)
-	arrows: true,   // Пролистывание стрелками
-	dots: true      // Индикаторные точки
-};
-
-Sim.prototype.elemPrev = function(num) {
-	num = num || 1;
-
-	let prevElement = this.currentElement;
-	this.currentElement -= num;
-	if(this.currentElement < 0) this.currentElement = this.elemCount-1;
-
-	if(!this.options.loop) {
-		if(this.currentElement == 0) {
-			this.leftArrow.style.display = 'none'
-		};
-		this.rightArrow.style.display = 'block'
-	};
-	
-	this.sldrElements[this.currentElement].style.opacity = '1';
-	this.sldrElements[prevElement].style.opacity = '0';
-
-	if(this.options.dots) {
-		this.dotOn(prevElement); this.dotOff(this.currentElement)
-	}
-};
-
-Sim.prototype.elemNext = function(num) {
-	num = num || 1;
-	
-	let prevElement = this.currentElement;
-	this.currentElement += num;
-	if(this.currentElement >= this.elemCount) this.currentElement = 0;
-
-	if(!this.options.loop) {
-		if(this.currentElement == this.elemCount-1) {
-			this.rightArrow.style.display = 'none'
-		};
-		this.leftArrow.style.display = 'block'
-	};
-
-	this.sldrElements[this.currentElement].style.opacity = '1';
-	this.sldrElements[prevElement].style.opacity = '0';
-
-	if(this.options.dots) {
-		this.dotOn(prevElement); this.dotOff(this.currentElement)
-	}
-};
-
-Sim.prototype.dotOn = function(num) {
-	this.indicatorDotsAll[num].style.cssText = 'background-color:#BBB; cursor:pointer;'
-};
-
-Sim.prototype.dotOff = function(num) {
-	this.indicatorDotsAll[num].style.cssText = 'background-color:#556; cursor:default;'
-};
-
-Sim.initialize = function(that) {
-
-	// Constants
-	that.elemCount = that.sldrElements.length; // Количество элементов
-
-	// Variables
-	that.currentElement = 0;
-	let bgTime = getTime();
-
-	// Functions
-	function getTime() {
-		return new Date().getTime();
-	};
-	function setAutoScroll() {
-		that.autoScroll = setInterval(function() {
-			let fnTime = getTime();
-			if(fnTime - bgTime + 10 > that.options.interval) {
-				bgTime = fnTime; that.elemNext()
-			}
-		}, that.options.interval)
-	};
-
-	// Start initialization
-	if(that.elemCount <= 1) {   // Отключить навигацию
-		that.options.auto = false; that.options.arrows = false; that.options.dots = false;
-		that.leftArrow.style.display = 'none'; that.rightArrow.style.display = 'none'
-	};
-	if(that.elemCount >= 1) {   // показать первый элемент
-		that.sldrElemFirst.style.opacity = '1';
-	};
-
-	if(!that.options.loop) {
-		that.leftArrow.style.display = 'none';  // отключить левую стрелку
-		that.options.auto = false; // отключить автопркрутку
-	}
-	else if(that.options.auto) {   // инициализация автопрокруки
-		setAutoScroll();
-		// Остановка прокрутки при наведении мыши на элемент
-		that.sldrList.addEventListener('mouseenter', function() {clearInterval(that.autoScroll)}, false);
-		that.sldrList.addEventListener('mouseleave', setAutoScroll, false)
-	};
-
-	if(that.options.arrows) {  // инициализация стрелок
-		that.leftArrow.addEventListener('click', function() {
-			let fnTime = getTime();
-			if(fnTime - bgTime > 1000) {
-				bgTime = fnTime; that.elemPrev()
-			}
-		}, false);
-		that.rightArrow.addEventListener('click', function() {
-			let fnTime = getTime();
-			if(fnTime - bgTime > 1000) {
-				bgTime = fnTime; that.elemNext()
-			}
-		}, false)
-	}
-	else {
-		that.leftArrow.style.display = 'none'; that.rightArrow.style.display = 'none'
-	};
-
-	if(that.options.dots) {  // инициализация индикаторных точек
-		let sum = '', diffNum;
-		for(let i=0; i<that.elemCount; i++) {
-			sum += '<span class="sim-dot"></span>'
-		};
-		that.indicatorDots.innerHTML = sum;
-		that.indicatorDotsAll = that.sldrRoot.querySelectorAll('span.sim-dot');
-		// Назначаем точкам обработчик события 'click'
-		for(let n=0; n<that.elemCount; n++) {
-			that.indicatorDotsAll[n].addEventListener('click', function() {
-				diffNum = Math.abs(n - that.currentElement);
-				if(n < that.currentElement) {
-					bgTime = getTime(); that.elemPrev(diffNum)
-				}
-				else if(n > that.currentElement) {
-					bgTime = getTime(); that.elemNext(diffNum)
-				}
-				// Если n == that.currentElement ничего не делаем
-			}, false)
-		};
-		that.dotOff(0);  // точка[0] выключена, остальные включены
-		for(let i=1; i<that.elemCount; i++) {
-			that.dotOn(i)
-		}
-	}
-};
-
-new Sim();
-</script>
-    
-</body>
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<p> Вы любитель вечеринок? Душа компании? Собираете вокруг себя толпы народа? Тогда эта игра не для Вас! Эта игра предназначена для тех, кому одиноко. Нет своей компании? Visual Prickol Games щедро Вам её дарит! Играйте в игры, веселитесь, гуляйте, и это всё не отходя от своего ноутбука!</p>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+        	<h2 style="margin-top: 50px;">Department of IT - Отделение информационных технологий</h2>
+        </div>
+        	<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        		<p>Жанры: дружба, хоррор, детектив, юмор, приключения, повседневность</p>
+				<p>Рейтинг: 14+ </p>
+				<p>Время прохождения: планируется от 4 часов </p>
+				
+        	</div>
+        	<div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+               <img src="main_menu2.png"/>
+        </div>
+    </div>
+</div>
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<p>Анонс игры, посвящённой ОПК СТИ НИТУ "МИСиС". Вы - студент престижного колледжа, ходите на пары, решаете логарифмы и планируете будущее в сфере информационных технологий. Но мало кто знает, что в данном учебном заведении происходят мистические вещи: то другое измерение увидишь, то на совет теней попадёшь, в добавок ещё ходят слухи, что студенты пропадают! Да и прошлое протагониста ничем хорошим не отличается - никто и не подозревает о Ваших постоянных флешбеках и некоторых съездах по психике из-за парочки случаев в школе. </p>
+</div>
