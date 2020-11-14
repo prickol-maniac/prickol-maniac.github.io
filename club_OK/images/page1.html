@@ -1,0 +1,68 @@
+<!DOCTYPE html public "_//W3C//DTD HTML 4.01 Frameset//EN" "http://w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+	<title>Оставьте заявку здесь</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="headblock">
+		<img src="logo2.png" style="width: 100px; height: 100px; border: none; padding-left: 30px">
+		<font size="50px" color="white">Клуб_оk - портал домашнего творчества</font>
+	</div>
+	<div id="menu">
+		<a href="index.html"><p style="font-size: 130%">Главная</p></a>
+		<p style="font-size: 130%">Разделы:</p>
+		<ul>
+		<li><p><a href = "#">Одежда</a></p></li>
+		<li><p><a href = "#">Игрушки</a></p></li>
+		<li><p><a href = "page2.html">Банты</a></p></li>
+		<li><p><a href = "#">Метрика</a></p></li>
+	</ul>
+	<hr style="border: 1px solid black">
+		<p><a href = "page1.html">Оставить заявку</a></p>
+		<p><a href = "#">Контакты</a></p>
+
+	</div>
+<div id="contentblock">
+<form method="post" action="mail.php">
+	<h2 align="center">Oставьте заявку здесь!</h2>
+	<table>
+		<tr>
+			<td><label>Ваше ФИО:</label></td>
+			<td><input name="fio"></td>
+		</tr>
+		<tr>
+			<td><label>Номер телефона:</label></td>
+			<td><input name="phone"></td>
+		</tr>
+		<tr>
+			<td><label>E-mail:</label></td>
+			<td><input name="email"></td>
+		</tr>
+		<tr>
+			<td><label>Доставка:</label></td>
+			<td><input type="radio" name="a">Самовывоз <input type="radio" name="b">Почтой</td>
+		</tr>
+		<tr>
+			<td><label>Категория заявки:</label></td>
+			<td><select name="cc">
+			<option value="1">
+			<option value="2">Мягкие игрушки
+			<option value="3">Одежда
+			</select></td>
+		</tr>
+		<tr>
+			<td><label>Пожелание к заявке</label></td>
+		</tr>
+		<tr>
+			<td colspan="2"><textarea style="width: 450px; height: 100px"></textarea></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="right"><input type="submit" value="Отправить"></td>
+		</tr>
+	</table>
+</form>
+</div>
+</body>
+</html>
