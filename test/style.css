@@ -1,0 +1,28 @@
+body{
+	background-image: url(background.jpg);
+	background-repeat: true;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	color: #fff;
+}
+form{
+	font-color: #fff;
+	font-size: 20px;
+	font-family: Comic Sans MS;
+	margin: 5% 5%;
+}
+img{
+	width: 90%;
+	margin: 7%;
+	margin-top: 15%;
+	border-width: 3px;
+	border-color: #fff;
+	vertical-align: center;
+}
+div{
+	color: #fff;
+	text-shadow: 1px 1px 1px #001;
+	padding: 0px;
+	margin: 0px;
+}

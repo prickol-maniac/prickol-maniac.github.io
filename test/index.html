@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Тест на Maniac'a</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+	<form name="form1">
+  <p>Кто я по гороскопу?<br>
+    <label>
+      <input type="radio" name="myname" value="0">
+      Овен</label>
+    <br>
+    <label>
+      <input type="radio" name="myname" value="0">
+      Скорпион</label>
+    <br>
+    <label>
+      <input type="radio" name="myname" value="1">
+      Телец</label>
+    <br>
+  </p>
+
+  <p>Моя любимая группа?<br>
+    <label>
+      <input type="radio" name="mygroup" value="0">
+      Руки вверх</label>
+    <br>
+    <label>
+      <input type="radio" name="mygroup" value="1">
+      Время и стекло</label>
+    <br>
+    <label>
+      <input type="radio" name="mygroup" value="0">
+      Пошлая молли</label>
+    <br>
+  </p>
+
+<p>Моя любимая страна?<br>
+    <label>
+      <input type="radio" name="mycountry" value="1">
+      Беларусь</label>
+    <br>
+    <label>
+      <input type="radio" name="mycountry" value="0">
+      Россия</label>
+    <br>
+    <label>
+      <input type="radio" name="mycountry" value="0">
+      Америка</label>
+    <br>
+  </p>
+
+<p>Мои любимые конфеты?<br>
+    <label>
+      <input type="radio" name="mysweet" value="0">
+      Взлетные</label>
+    <br>
+    <label>
+      <input type="radio" name="mysweet" value="0">
+      Птичка</label>
+    <br>
+    <label>
+      <input type="radio" name="mysweet" value="1">
+      Мишка на севере</label>
+    <br>
+  </p>
+
+<p>Моя любимая еда?<br>
+    <label>
+      <input type="radio" name="myfood" value="1">
+      Борщ</label>
+    <br>
+    <label>
+      <input type="radio" name="myfood" value="1">
+      Картоха</label>
+    <br>
+    <label>
+      <input type="radio" name="myfood" value="1">
+      Шоколадки</label>
+    <br>
+  </p>
+  <br>
+ 
+</form>
+</div>
+<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+	<form name="form2">
+  <p>"Если ты постоянно в моих мыслях - ..."?<br>
+    <label>
+      <input type="radio" name="mydream" value="0">
+      ты мне нравишься</label>
+    <br>
+    <label>
+      <input type="radio" name="mydream" value="1">
+      плати аренду</label>
+    <br>
+    <label>
+      <input type="radio" name="mydream" value="0">
+      это неправда</label>
+    <br>
+  </p>
+
+  <p>Как я путешествую?<br>
+    <label>
+      <input type="radio" name="mytrip" value="1">
+      В фанфиках</label>
+    <br>
+    <label>
+      <input type="radio" name="mytrip" value="0">
+      На поезде</label>
+    <br>
+    <label>
+      <input type="radio" name="mytrip" value="1">
+      Кукухой</label>
+    <br>
+  </p>
+
+<p>Мое любимое число?<br>
+    <label>
+      <input type="radio" name="mynumber" value="1">
+      13</label>
+    <br>
+    <label>
+      <input type="radio" name="mynumber" value="0">
+      7</label>
+    <br>
+    <label>
+      <input type="radio" name="mynumber" value="0">
+      5</label>
+    <br>
+  </p>
+
+<p>Мой любимый предмет?<br>
+    <label>
+      <input type="radio" name="mysubject" value="0">
+      Английский</label>
+    <br>
+    <label>
+      <input type="radio" name="mysubject" value="0">
+      Биология</label>
+    <br>
+    <label>
+      <input type="radio" name="mysubject" value="1">
+      Математика</label>
+    <br>
+  </p>
+
+<p>Моя любимая песня?<br>
+    <label>
+      <input type="radio" name="mysong" value="1">
+      The Monster - Eminem</label>
+    <br>
+    <label>
+      <input type="radio" name="mysong" value="1">
+      Имя 505 - Время и Стекло</label>
+    <br>
+    <label>
+      <input type="radio" name="mysong" value="1">
+      Останься в моих снах - Время и Стекло</label>
+    <br>
+  </p>
+  <br>
+  </form></div>
+<div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
+	<img src="photo.jpg" border="5px #fff" margin="5%">
+	<form name="form3">
+		 <p style="position: center; padding-left: 7%">
+		    <input type="button" id="calc" value="Проверить" style="width: 35%">
+		    <input type="text" name="result" readonly style="width: 60%">
+  		</p>
+	 	
+	</form>
+	</div>
+</div></div>
+
+
+<script type="text/javascript">
+	calc.onclick = function(){
+    /*var myform3 = this.form;
+    var myform1 = document.getElementByName('form1');
+    var myform2 = document.getElementByName('form2');*/
+    //alert(document.querySelector("input[name='mysubject']:checked").value);
+    //myform3.result.value = +myform1.myname.value + +myform1.mycountry.value;
+    //var result = myname.value;
+    var result = 0;
+    result = Number(document.querySelector("input[name='myname']:checked").value)+
+    Number(document.querySelector("input[name='mygroup']:checked").value)+
+    Number(document.querySelector("input[name='mycountry']:checked").value)+
+    Number(document.querySelector("input[name='mysweet']:checked").value)+
+    Number(document.querySelector("input[name='myfood']:checked").value)+
+    Number(document.querySelector("input[name='mydream']:checked").value)+
+    Number(document.querySelector("input[name='mytrip']:checked").value)+
+    Number(document.querySelector("input[name='mynumber']:checked").value)+
+    Number(document.querySelector("input[name='mysubject']:checked").value)+
+    Number(document.querySelector("input[name='mysong']:checked").value);
+    document.querySelector("input[name='result']").value = result;
+}
+</script>
+</body>
+</html>
